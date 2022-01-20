@@ -9,6 +9,9 @@ static const char unknown_str[] = "n/a";
 /* maximum output string length */
 #define MAXLEN 2048
 
+/* text to show as separator */
+#define SEPARATOR " | "
+
 /*
  * function            description                     argument (example)
  *
@@ -65,5 +68,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-	{ datetime, "%s",           "%F %T" },
+    { wifi_essid,	"WiFi: %s",	"wlan0"         },
+	{ separator, SEPARATOR,             },
+    { run_command,  "%s",       "xbacklight -get | awk -F \".\" '{ print $1 }'"  },
+	{ separator, SEPARATOR,             },
+	{ battery_perc, "%s%%",      "BAT0" },
+	{ separator, SEPARATOR,             },
+	{ datetime, "%s",           "%d/%m/%Y %R" },
 };
