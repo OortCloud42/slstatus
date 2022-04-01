@@ -70,7 +70,7 @@ static const struct arg args[] = {
 	/* function format          argument */
     { wifi_essid,	"WiFi: %s",	"wlan0"         },
 	{ separator, SEPARATOR,             },
-    { run_command,  "%s",       "xbacklight -get | awk -F \".\" '{ print $1 }'"  },
+    { run_command,  "%s",       "xbacklight -get | round"  },
 	{ separator, SEPARATOR,             },
 	{ battery_perc, "%s%%",      "BAT0" },
 	{ separator, SEPARATOR,             },
