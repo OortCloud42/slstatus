@@ -68,11 +68,11 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-    { wifi_essid,	"WiFi: %s",	"wlan0"         },
+    { wifi_essid,	"WLAN: %s",	"wlan0"         },
 	{ separator, SEPARATOR,             },
-    { run_command,  "%s",       "xbacklight -get | round"  },
+    { run_command,  "BRT: %s%%",       "xbacklight -get | round"  },
 	{ separator, SEPARATOR,             },
-	{ battery_perc, "%s%%",      "BAT0" },
+	{ battery_perc, "BAT: %s%%",      "BAT0" },
 	{ separator, SEPARATOR,             },
 	{ datetime, "%s",           "%d/%m/%Y %R" },
 };
