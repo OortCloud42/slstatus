@@ -10,7 +10,7 @@ static const char unknown_str[] = "n/a";
 #define MAXLEN 2048
 
 /* text to show as separator */
-#define SEPARATOR " | "
+#define SEPARATOR " · "
 
 /*
  * function            description                     argument (example)
@@ -69,6 +69,8 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
     { wifi_essid,	"WLAN: %s",	"wlan0"         },
+	{ separator, SEPARATOR,             },
+    { temp,	"CPU: %s°",	"/sys/class/thermal/thermal_zone0/temp"         },
 	{ separator, SEPARATOR,             },
     { run_command,  "BRT: %s%%",       "xbacklight -get | round"  },
 	{ separator, SEPARATOR,             },
